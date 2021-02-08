@@ -11,9 +11,9 @@ namespace ConsoleUI
         {
             CarManager carManager = new CarManager(new EfCarDal());
 
-            carManager.Add(new Car { BrandId = 1, ColorId = 3, DailyPrice = 160000, Description = "Fiat Doblo", ModelYear = 2013 });
-            carManager.Update(new Car { Id = 5, BrandId = 2, ColorId = 1, DailyPrice = 2500000, Description = "Range Rover", ModelYear = 2020 });
-            carManager.Delete(new Car { Id = 4, BrandId = 2, ColorId = 1, DailyPrice = 2500000, Description = "Range Rover", ModelYear = 2020 });
+            carManager.Delete(new Car { Id = 2 });
+            carManager.Add(new Car { Id = 2, ColorId = 2, BrandId = 2, ModelYear = 2014, DailyPrice = 365000, Description = "Volvo" });
+            carManager.Update(new Car { Id = 1, BrandId = 2, ColorId = 4, DailyPrice = 567895, ModelYear = 2000, Description = "Tofaşk" });
 
             foreach (var car in carManager.GetAll())
             {
@@ -30,9 +30,9 @@ namespace ConsoleUI
 
             ColorsManager colorsManager = new ColorsManager(new EfColorsDal());
 
-            colorsManager.Add(new Colors { Name = "yeşil" });
-            colorsManager.Update(new Colors { Id = 2, Name = "turuncu" });
-            colorsManager.Delete(new Colors { Id = 5, Name = "yeşil" });
+            colorsManager.Delete(new Colors { Id = 1 });
+            colorsManager.Add(new Colors { Id = 1, Name = "Eflatun" });
+            colorsManager.Update(new Colors { Id = 2, Name = "Mor" });
 
             Console.WriteLine("ReENK SEÇENEKLERİ:");
             foreach (var color in colorsManager.GetAll())
@@ -46,9 +46,9 @@ namespace ConsoleUI
 
             BrandManager brandManager = new BrandManager(new EfBrandDal());
 
-            brandManager.Add(new Brand { Name = "Ferrari" });
-            brandManager.Update(new Brand { Id = 2, Name = "Audi" });
-            brandManager.Delete(new Brand { Id = 7, Name = "Ferrari" });
+            brandManager.Delete(new Brand { Id = 5 });
+            brandManager.Add(new Brand { Id = 5, Name = "Jeep" });
+            brandManager.Update(new Brand {Id = 4, Name = "Nissan" });
 
             Console.WriteLine("MARKALAR:");
             foreach (var brand in brandManager.GetAll())

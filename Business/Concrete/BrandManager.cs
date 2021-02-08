@@ -23,7 +23,7 @@ namespace Business.Concrete
 
         public void Delete(Brand brand)
         {
-            _brandDal.Add(brand);
+            _brandDal.Delete(brand);
         }
 
         public List<Brand> GetAll()
@@ -33,7 +33,7 @@ namespace Business.Concrete
 
         public void Update(Brand brand)
         {
-            _brandDal.Add(brand);
+            _brandDal.Update(brand);
         }
     }
 }
