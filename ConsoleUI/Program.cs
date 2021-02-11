@@ -5,7 +5,9 @@ using System;
 
 namespace ConsoleUI
 {
-    class Program
+ 
+
+class Program
     {
         static void Main(string[] args)
         {
@@ -15,16 +17,33 @@ namespace ConsoleUI
             carManager.Add(new Car { Id = 2, ColorId = 2, BrandId = 2, ModelYear = 2014, DailyPrice = 365000, Description = "Volvo" });
             carManager.Update(new Car { Id = 1, BrandId = 2, ColorId = 4, DailyPrice = 567895, ModelYear = 2000, Description = "Tofaşk" });
 
-            foreach (var car in carManager.GetAll())
+            var result = carManager.GetAll();
+            if (result.Success == true)
             {
-                Console.WriteLine(car.Description+" = "+car.DailyPrice+"TL");
-                
+                foreach (var car in result.Data)
+                {
+                    Console.WriteLine(car.Description + " = " + car.DailyPrice + "TL");
+
+                }
             }
+            else
+            {
+                Console.WriteLine(result.Message);
+            }
+
             Console.WriteLine("*************************************");
-            foreach (var car in carManager.GetCarDetails())
+            if (result.Success == true)
             {
-                Console.WriteLine(car.BrandName+" "+car.ColorName+" renkli arabanın fiyatı=>"+car.DailyPrice);
+                foreach (var car in carManager.GetCarDetails().Data)
+                {
+                    Console.WriteLine(car.BrandName + " " + car.ColorName + " renkli arabanın fiyatı=>" + car.DailyPrice);
+                }
             }
+            else
+            {
+                Console.WriteLine(result.Message);
+            }
+
             Console.WriteLine("*************************************");
             Console.WriteLine("*************************************");
 
@@ -34,8 +53,8 @@ namespace ConsoleUI
             colorsManager.Add(new Colors { Id = 1, Name = "Eflatun" });
             colorsManager.Update(new Colors { Id = 2, Name = "Mor" });
 
-            Console.WriteLine("ReENK SEÇENEKLERİ:");
-            foreach (var color in colorsManager.GetAll())
+            Console.WriteLine("RENK SEÇENEKLERİ:");
+            foreach (var color in colorsManager.GetAll().Data)
             {
                
                 Console.WriteLine(color.Name);
@@ -51,7 +70,7 @@ namespace ConsoleUI
             brandManager.Update(new Brand {Id = 4, Name = "Nissan" });
 
             Console.WriteLine("MARKALAR:");
-            foreach (var brand in brandManager.GetAll())
+            foreach (var brand in brandManager.GetAll().Data)
             {
 
                 Console.WriteLine(brand.Name);
