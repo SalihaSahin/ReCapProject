@@ -11,6 +11,25 @@ class Program
     {
         static void Main(string[] args)
         {
+            //CarTest();
+
+            Console.WriteLine("*************************************");
+            Console.WriteLine("*************************************");
+            //ColorTest();
+            Console.WriteLine("*************************************");
+            Console.WriteLine("*************************************");
+
+            // BrandTest();
+
+
+            CustomerManager customerManager = new CustomerManager(new EfCutomerDal());
+            customerManager.Add(new Customer { CustomerId=2,UserId=3,CompanyName="ÖzŞahin İnşaat" });
+          
+
+        }
+
+        private static void CarTest()
+        {
             CarManager carManager = new CarManager(new EfCarDal());
 
             carManager.Delete(new Car { Id = 2 });
@@ -43,10 +62,10 @@ class Program
             {
                 Console.WriteLine(result.Message);
             }
+        }
 
-            Console.WriteLine("*************************************");
-            Console.WriteLine("*************************************");
-
+        private static void ColorTest()
+        {
             ColorsManager colorsManager = new ColorsManager(new EfColorsDal());
 
             colorsManager.Delete(new Colors { Id = 1 });
@@ -56,18 +75,19 @@ class Program
             Console.WriteLine("RENK SEÇENEKLERİ:");
             foreach (var color in colorsManager.GetAll().Data)
             {
-               
+
                 Console.WriteLine(color.Name);
 
             }
-            Console.WriteLine("*************************************");
-            Console.WriteLine("*************************************");
+        }
 
+        private static void BrandTest()
+        {
             BrandManager brandManager = new BrandManager(new EfBrandDal());
 
             brandManager.Delete(new Brand { Id = 5 });
             brandManager.Add(new Brand { Id = 5, Name = "Jeep" });
-            brandManager.Update(new Brand {Id = 4, Name = "Nissan" });
+            brandManager.Update(new Brand { Id = 4, Name = "Nissan" });
 
             Console.WriteLine("MARKALAR:");
             foreach (var brand in brandManager.GetAll().Data)
@@ -76,7 +96,6 @@ class Program
                 Console.WriteLine(brand.Name);
 
             }
-
         }
     }
 }
