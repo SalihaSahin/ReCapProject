@@ -24,8 +24,8 @@ class Program
 
             CustomerManager customerManager = new CustomerManager(new EfCutomerDal());
             customerManager.Add(new Customer { CustomerId=2,UserId=3,CompanyName="ÖzŞahin İnşaat" });
-          
 
+         
         }
 
         private static void CarTest()
