@@ -8,8 +8,8 @@ namespace Entities.Concrete
     public class Rental:IEntity
     {
         public int Id { get; set; }
-        public string CarId { get; set; }
-        public string CustomerId { get; set; }
+        public int CarId { get; set; }
+        public int CustomerId { get; set; }
         public DateTime RentDate { get; set; }
         public DateTime ReturnDate { get; set; }
     }

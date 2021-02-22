@@ -22,7 +22,7 @@ class Program
             // BrandTest();
 
 
-            CustomerManager customerManager = new CustomerManager(new EfCutomerDal());
+            CustomerManager customerManager = new CustomerManager(new EfCustomerDal());
             customerManager.Add(new Customer { CustomerId=2,UserId=3,CompanyName="ÖzŞahin İnşaat" });
 
          
