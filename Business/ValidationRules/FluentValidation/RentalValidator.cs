@@ -13,7 +13,7 @@ namespace Business.ValidationRules.FluentValidation
             RuleFor(r => r.CarId).NotEmpty();
             RuleFor(r => r.CustomerId).NotEmpty();
             RuleFor(r => r.RentDate).NotEmpty();
-            RuleFor(r => r.ReturnDate).Equal(null).WithMessage("Kiralamaya uygun değil !");
+            //RuleFor(r => r.ReturnDate).Equal(null).WithMessage("Kiralamaya uygun değil !");
         }
     }
 }

@@ -33,5 +33,7 @@ namespace Business.Constants
         internal static string RentalUpdated = "Kiralama güncellendi";
         internal static string RentalListed = "Kiralanan arabalar listelendi";
         internal static object RentalInvaited;
+        public static string CarImageLimitExceeded = "Car Image Limit Exceeded";
+        public static string CarImageIsNotExists = "Car Image Is Not Exists";
     }
 }
