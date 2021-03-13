@@ -14,10 +14,10 @@ namespace Business.Concrete
 {
     public class AuthManager : IAuthService
     {
-        private IUsersService _userService;
+        private IUserService _userService;
         private ITokenHelper _tokenHelper;
 
-        public AuthManager(IUsersService userService, ITokenHelper tokenHelper)
+        public AuthManager(IUserService userService, ITokenHelper tokenHelper)
         {
             _userService = userService;
             _tokenHelper = tokenHelper;
