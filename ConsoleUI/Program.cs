@@ -85,15 +85,15 @@ class Program
         {
             BrandManager brandManager = new BrandManager(new EfBrandDal());
 
-            brandManager.Delete(new Brand { Id = 5 });
-            brandManager.Add(new Brand { Id = 5, Name = "Jeep" });
-            brandManager.Update(new Brand { Id = 4, Name = "Nissan" });
+            brandManager.Delete(new Brand { BrandId = 5 });
+            brandManager.Add(new Brand { BrandId = 5, BrandName = "Jeep" });
+            brandManager.Update(new Brand { BrandId = 4, BrandName = "Nissan" });
 
             Console.WriteLine("MARKALAR:");
             foreach (var brand in brandManager.GetAll().Data)
             {
 
-                Console.WriteLine(brand.Name);
+                Console.WriteLine(brand.BrandName);
 
             }
         }

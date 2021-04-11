@@ -25,15 +25,15 @@ namespace Business.Constants
         public static string UserDeleted = "Kullanıcı silindi";
         public static string UserListed = "Kullanıcılar listelendi";
         public static string UserUpdated = "Kullanıcı güncellendi";
-        internal static string CustomerAdded="Müşteri eklendi";
-        internal static string CustomerDeleted="Müşteri silindi";
-        internal static string CustomerUpdated = "Müşteri güncellendi";
-        internal static string CustomerListed = "Müşteriler listelendi";
-        internal static string RentalAdded="Kiralama oluşturuldu";
-        internal static string RentalDeleted = "Kiralama silindi";
-        internal static string RentalUpdated = "Kiralama güncellendi";
-        internal static string RentalListed = "Kiralanan arabalar listelendi";
-        internal static object RentalInvaited;
+        public static string CustomerAdded="Müşteri eklendi";
+        public static string CustomerDeleted="Müşteri silindi";
+        public static string CustomerUpdated = "Müşteri güncellendi";
+        public static string CustomerListed = "Müşteriler listelendi";
+        public static string RentalAdded="Kiralama oluşturuldu";
+        public static string RentalDeleted = "Kiralama silindi";
+        public static string RentalUpdated = "Kiralama güncellendi";
+        public static string RentalListed = "Kiralanan arabalar listelendi";
+        public static object RentalInvaited;
         public static string CarImageLimitExceeded = "Car Image Limit Exceeded";
         public static string CarImageIsNotExists = "Car Image Is Not Exists";
 
@@ -44,5 +44,9 @@ namespace Business.Constants
         public static string SuccessfulLogin = "Başarılı giriş";
         public static string UserAlreadyExists = "Kullanıcı mevcut";
         public static string AccessTokenCreated = "Token oluşturuldu";
+
+        internal static string imageAdd;
+        internal static string listed;
+        internal static readonly string succeed;
     }
 }
